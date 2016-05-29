@@ -53,7 +53,8 @@
   "repository": "ldez/generator-atom-package-plus",
   "scripts": {
     "prepublish": "gulp prepublish",
-    "test": "gulp"
+    "test": "gulp",
+    "ci": "gulp coveralls"
   },
   "license": "MIT"
 }
