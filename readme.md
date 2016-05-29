@@ -3,13 +3,15 @@
 [![NPM version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
 [![Dependency Status][daviddm-image]][daviddm-url]
-[![Coverage percentage][coveralls-image]][coveralls-url]
+[![Coverage percentage](https://coveralls.io/repos/ldez/generator-atom-package-plus/badge.svg)](https://coveralls.io/r/ldez/generator-atom-package-plus)
 
-> A Yeoman generator to build and develop Atom packages
+> A Yeoman generator to build and develop [Atom][atom-url] packages.
+
+![anim](https://cloud.githubusercontent.com/assets/5674651/15632788/08f9bfb6-259d-11e6-8750-212c4a37ce21.gif)
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-atom-package-plus using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+First, install [Yeoman][yeoman-url] and `generator-atom-package-plus` using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
 npm install -g yo
@@ -27,7 +29,7 @@ yo atom-package-plus
  * Yeoman has a heart of gold.
  * Yeoman is a person with feelings and opinions, but is very easy to work with.
  * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
+ * Feel free to [learn more about Yeoman][yeoman-url].
 
 ## License
 
@@ -40,5 +42,5 @@ MIT © [Fernandez Ludovic](https://github.com/ldez/)
 [travis-url]: https://travis-ci.org/ldez/generator-atom-package-plus
 [daviddm-image]: https://david-dm.org/ldez/generator-atom-package-plus.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/ldez/generator-atom-package-plus
-[coveralls-image]: https://coveralls.io/repos/ldez/generator-atom-package-plus/badge.svg
-[coveralls-url]: https://coveralls.io/r/ldez/generator-atom-package-plus
+[atom-url]: http://atom.io/
+[yeoman-url]: http://yeoman.io

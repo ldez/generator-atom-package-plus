@@ -4,7 +4,7 @@
 - Write tests.
 - Run **all** tests.
 - Add an explanation.
-- Add screenshot(s) it it's possible.
+- Add screenshot(s) if it's possible.
 
 **Remove the previous section upon you have read it.**
 
