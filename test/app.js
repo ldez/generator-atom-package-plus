@@ -70,6 +70,7 @@ describe('generator-atom-package-plus:app', function() {
         '.github/CONTRIBUTING.md',
         '.github/ISSUE_TEMPLATE.md',
         '.github/PULL_REQUEST_TEMPLATE.md',
+        '.travis/publish.sh',
         'lib/main.coffee',
         'spec/package-spec.coffee',
         'grammars/package-generator-test.cson',
@@ -138,6 +139,7 @@ describe('generator-atom-package-plus:app', function() {
         '.github/CONTRIBUTING.md',
         '.github/ISSUE_TEMPLATE.md',
         '.github/PULL_REQUEST_TEMPLATE.md',
+        '.travis/publish.sh',
         'lib/main.coffee',
         'spec/package-spec.coffee',
       ]);

@@ -209,6 +209,17 @@ module.exports = yeoman.Base.extend({
     );
 
     this.fs.copyTpl(
+      this.templatePath('.travis/publish.sh'),
+      this.destinationPath('.travis/publish.sh'),
+      this.props
+    );
+    this.fs.copyTpl(
+      this.templatePath('GENERATOR_INFO.md'),
+      this.destinationPath('GENERATOR_INFO.md'),
+      this.props
+    );
+
+    this.fs.copyTpl(
       this.templatePath('readme.md'),
       this.destinationPath('readme.md'),
       this.props
@@ -291,6 +302,15 @@ module.exports = yeoman.Base.extend({
     this.log('\n' + chalk.green('Edit readme.md:'));
     this.log(chalk.yellow('- change ' + chalk.cyan('ADD_YOUR_ID') + ' in the AppVeyor badge.'));
     this.log(chalk.yellow('- change ' + chalk.cyan('YOUR_LICENSE') + ' in the License badge.') + '\n');
+
+    // Travis CI with continuous delivery
+    this.log('\n' + chalk.green('Active continuous delivery:'));
+    this.log(chalk.yellow('- generate encrypted SSH key.'));
+    this.log(chalk.yellow('- change ' + chalk.cyan('$encrypted_xxxx_key') +
+      ' and ' + chalk.cyan('$encrypted_xxxx_iv') +
+      ' in ' + chalk.cyan('.travis/publish.sh') + '.'));
+    this.log(chalk.yellow('- add the SSH key to your Github account.'));
+    this.log(chalk.yellow('- add ' + chalk.cyan('ATOM_ACCESS_TOKEN') + ' to Travis UI.'));
   }
 
 });
