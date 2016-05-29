@@ -1,0 +1,13 @@
+name: 'my language name'
+scopeName: '<%= scopeName %>.scope'
+fileTypes: [
+  'my_language_extension1'
+  'my_language_extension2'
+]
+patterns: [
+    include: '#comment'
+]
+repository:
+  comment:
+    name: 'comment.line.mylanguage'
+    match: "^(#|//).*$"

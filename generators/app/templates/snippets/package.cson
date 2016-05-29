@@ -1,0 +1,13 @@
+'.<%= scopeName %>.scope':
+
+  'snippet 1':
+    description: 'My snippet 1'
+    descriptionMoreURL: 'http://flight-manual.atom.io/using-atom/sections/snippets/'
+    prefix: 'hello'
+    body: 'Hello $0!'
+
+  'snippet 2':
+    description: 'My snippet 2'
+    descriptionMoreURL: 'http://flight-manual.atom.io/using-atom/sections/snippets/'
+    prefix: 'welcome'
+    body: 'Welcome $0!'
