@@ -283,9 +283,13 @@ module.exports = yeoman.Base.extend({
   },
 
   end: function() {
+    this.log(yosay(
+      chalk.green('Success!') + '\n' +
+      chalk.yellow('Your Atom package `' + this.props.name.replace('atom-', '') + '` is ready!')
+    ));
     this.log('\n' + chalk.yellow('Edit readme.md:'));
-    this.log(chalk.yellow('- change ADD_YOUR_ID in the AppVeyor badge.'));
-    this.log(chalk.yellow('- change YOUR_LICENSE in the License badge.'));
+    this.log(chalk.yellow('- change ' + chalk.magenta('ADD_YOUR_ID') + ' in the AppVeyor badge.'));
+    this.log(chalk.yellow('- change ' + chalk.magenta('YOUR_LICENSE') + ' in the License badge.') + '\n');
   }
 
 });
