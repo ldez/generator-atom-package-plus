@@ -6,7 +6,6 @@ var path = require('path');
 var _ = require('lodash');
 var extend = _.merge;
 var mkdirp = require('mkdirp');
-var parseAuthor = require('parse-author');
 var githubUsername = require('github-username');
 
 function makeGeneratorName(name) {
@@ -19,7 +18,7 @@ module.exports = yeoman.Base.extend({
 
   prompting: {
 
-    askFor: function() {
+    askFor: function () {
       var prompts = [{
         type: 'input',
         name: 'name',
@@ -27,7 +26,7 @@ module.exports = yeoman.Base.extend({
         // Default to current folder name
         default: makeGeneratorName(this.appname),
         filter: makeGeneratorName,
-        validate: function(str) {
+        validate: function (str) {
           return str.length > 0;
         }
       }, {
@@ -39,23 +38,23 @@ module.exports = yeoman.Base.extend({
         name: 'authorName',
         message: 'Author\'s Name',
         default: this.user.git.name(),
-        validate: function(str) {
+        validate: function (str) {
           return str.length > 0;
         }
       }, {
         name: 'authorEmail',
         message: 'Author\'s Email',
         default: this.user.git.email(),
-        validate: function(str) {
+        validate: function (str) {
           return str.length > 0;
         }
       }, {
         name: 'authorUrl',
-        message: 'Author\'s Homepage',
+        message: 'Author\'s Homepage'
       }, {
         name: 'keywords',
         message: 'Package keywords (comma to split)',
-        filter: function(words) {
+        filter: function (words) {
           return words.split(/\s*,\s*/g);
         }
       }, {
@@ -89,15 +88,15 @@ module.exports = yeoman.Base.extend({
         }]
       }];
 
-      return this.prompt(prompts).then(function(props) {
+      return this.prompt(prompts).then(function (props) {
         this.props = extend(this.props, props);
       }.bind(this));
     },
 
-    askForGithubAccount: function() {
+    askForGithubAccount: function () {
       var done = this.async();
 
-      githubUsername(this.props.authorEmail, function(err, username) {
+      githubUsername(this.props.authorEmail, function (err, username) {
         if (err) {
           username = username || '';
         }
@@ -105,10 +104,10 @@ module.exports = yeoman.Base.extend({
           name: 'githubAccount',
           message: 'GitHub username or organization',
           default: username,
-          validate: function(str) {
+          validate: function (str) {
             return str.length > 0;
           }
-        }).then(function(prompt) {
+        }).then(function (prompt) {
           this.props.githubAccount = prompt.githubAccount;
           done();
         }.bind(this));
@@ -116,7 +115,7 @@ module.exports = yeoman.Base.extend({
     }
   },
 
-  configuring: function() {
+  configuring: function () {
     if (path.basename(this.destinationPath()) !== this.props.name) {
       this.log(
         'Your generator must be inside a folder named ' + this.props.name + '\n' +
@@ -127,7 +126,7 @@ module.exports = yeoman.Base.extend({
     }
   },
 
-  default: function() {
+  default: function () {
     this.composeWith('node:editorconfig', {}, {
       local: require('generator-node').editorconfig
     });
@@ -150,15 +149,15 @@ module.exports = yeoman.Base.extend({
     });
   },
 
-  writing: function() {
+  writing: function () {
     var staticFiles = [
       '.coffeelintignore',
       '.gitignore',
       '.travis.yml',
       'appveyor.yml',
       'coffeelint.json'
-    ]
-    staticFiles.forEach(function(file) {
+    ];
+    staticFiles.forEach(function (file) {
       this.fs.copy(
         this.templatePath(file),
         this.destinationPath(file)
@@ -180,10 +179,10 @@ module.exports = yeoman.Base.extend({
       main: 'lib/main',
       keywords: [],
       engines: {
-        atom: ">=1.0.0 <2.0.0"
+        atom: '>=1.0.0 <2.0.0'
       },
       devDependencies: {
-        coffeelint: "^1.15.0"
+        coffeelint: '^1.15.0'
       }
     }, currentPkg);
 
@@ -215,7 +214,7 @@ module.exports = yeoman.Base.extend({
       this.props
     );
 
-    var baseFilename = this.props.name.replace('atom-', '')
+    var baseFilename = this.props.name.replace('atom-', '');
     this.fs.copyTpl(
       this.templatePath('lib/main.coffee'),
       this.destinationPath('lib/main.coffee'), {
@@ -278,11 +277,11 @@ module.exports = yeoman.Base.extend({
     }
   },
 
-  install: function() {
+  install: function () {
     this.runInstall('apm');
   },
 
-  end: function() {
+  end: function () {
     this.log(yosay(
       chalk.green('Success!') + '\n' +
       chalk.yellow('Your Atom package `' + this.props.name.replace('atom-', '') + '` is ready!')
