@@ -1,6 +1,6 @@
 {
   "name": "generator-atom-package-plus",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Yeoman generator to build and develop Atom packages",
   "homepage": "https://github.com/ldez/generator-atom-package-plus/",
   "author": {
