@@ -9,3 +9,5 @@
 <%= description %>
 
 ![A screenshot of your package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)
+
+[![created with generator-atom-package-plus](https://img.shields.io/badge/created%20with-generator--atom--package--plus-blue.svg?style=social)](https://www.npmjs.com/package/generator-atom-package-plus) by [@ldez](https://github.com/ldez)
