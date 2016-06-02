@@ -9,6 +9,25 @@
 
 ![anim](https://cloud.githubusercontent.com/assets/5674651/15632788/08f9bfb6-259d-11e6-8750-212c4a37ce21.gif)
 
+## Description
+
+Generates an Atom packages with:
+
+- [Travis CI](https://travis-ci.org) file already configured.
+- [AppVeyor](https://ci.appveyor.com) file already configured.
+- [GitHub templates](https://help.github.com/articles/helping-people-contribute-to-your-project/) already defined.
+
+Generates starters for:
+
+- lib
+- [spec](http://flight-manual.atom.io/hacking-atom/sections/writing-specs/)
+- [grammars](http://flight-manual.atom.io/using-atom/sections/grammar/) (optional)
+- [keymaps](http://flight-manual.atom.io/behind-atom/sections/keymaps-in-depth/) (optional)
+- menus (optional)
+- settings (optional)
+- [snippets](http://flight-manual.atom.io/using-atom/sections/snippets/) (optional)
+- styles (optional)
+
 ## Installation
 
 First, install [Yeoman][yeoman-url] and `generator-atom-package-plus` using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
